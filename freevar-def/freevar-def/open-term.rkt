@@ -1,6 +1,7 @@
 #lang racket/base
 
-(require syntax/parse
+(require (for-template racket/base)
+         syntax/parse
          syntax/transformer
          "private/syntax-utils.rkt")
 
