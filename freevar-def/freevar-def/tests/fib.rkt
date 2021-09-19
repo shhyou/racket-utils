@@ -19,8 +19,9 @@
   (set! init0 new-value))
 
 (define fib-2-13
-  (let ([init1 13])
-    fib))
+  (letrec ([f fib]
+           [init1 13])
+    f))
 
 (module+ test
   (check-equal?
