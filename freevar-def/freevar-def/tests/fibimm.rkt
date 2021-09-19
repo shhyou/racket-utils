@@ -28,15 +28,12 @@
    (fib-2-13 5)
    (list 2 13 (+ 2 13) (+ 13 (+ 2 13)) (+ (+ 2 13) (+ 13 (+ 2 13)))))
 
-  init0
   (let ([old-init0 init0])
     (set-init0! -1)
     (check-equal?
      (fib-2-13 5)
      (list 2 13 (+ 2 13) (+ 13 (+ 2 13)) (+ (+ 2 13) (+ 13 (+ 2 13)))))
-    (set-init0! old-init0))
-
-  init0)
+    (set-init0! old-init0)))
 
 (module+ test
   (check-equal?
@@ -44,8 +41,6 @@
          [init1 1])
      (fibimm 7))
    (list 0 1 1 2 3 5 8))
-
-  init0
 
   (check-equal?
    (with-freevar fibimm ([init1 b])

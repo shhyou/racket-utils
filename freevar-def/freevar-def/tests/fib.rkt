@@ -3,8 +3,7 @@
 (require freevar-def)
 
 (module+ test
-  (require rackunit
-           syntax/macro-testing))
+  (require rackunit))
 
 (define/freevar (fib n)
   #:freevars (init0 init1)
@@ -18,20 +17,6 @@
 (define init0 2)
 (define (set-init0! new-value)
   (set! init0 new-value))
-
-(module+ test
-  (check-exn
-   #rx"init1.+unbound"
-   (λ ()
-     (convert-syntax-error
-      fib)))
-
-  (check-exn
-   #rx"X.+unbound"
-   (λ ()
-     (convert-syntax-error
-      (with-freevar fib ([init1 X])
-        fib)))))
 
 (define fib-2-13
   (let ([init1 13])
