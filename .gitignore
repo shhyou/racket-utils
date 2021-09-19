@@ -1,0 +1,14 @@
+/doc/
+compiled
+*.zo
+*_zo.dep
+
+*.html
+scribble*.css
+scribble*.js
+manual*.css
+manual*.js
+*.pdf
+
+*~
+*#
